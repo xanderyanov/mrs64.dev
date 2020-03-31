@@ -1,0 +1,184 @@
+.form1 {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #e8e8e8;
+  border-radius: 2px;
+  padding: 15px;
+}
+
+.form1 input {
+  width: 100%;
+  height: 32px;
+  background-color: #fff;
+  border: 1px solid #fff;
+  padding: 0 10px;
+  font-size: 0.875rem;
+  line-height: 1.2;
+  font-weight: 400;
+  box-sizing: border-box;
+  display: inline-block;
+  outline: none;
+  margin-bottom: 8px;
+  border-radius: 2px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.form1 input.error {
+  border: 1px solid #f00;
+}
+
+.form1 input.work_email1 {
+  display: none;
+}
+
+.form1 textarea {
+  width: 100%;
+  height: 100px;
+  background-color: #fff;
+  border: 1px solid #fff;
+  padding: 10px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.2;
+  box-sizing: border-box;
+  display: inline-block;
+  outline: none;
+  margin-bottom: 8px;
+  resize: none;
+  border-radius: 2px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.form1 textarea.error {
+  border: 1px solid #f00;
+}
+
+.submit1 {
+  width: 150px;
+  height: 32px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.2;
+  padding: 2px 15px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.form__policy {
+  color: #000;
+  margin-bottom: 8px;
+}
+
+.form__policy p {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #000;
+}
+
+.form__policy a {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #be3f46;
+}
+
+.g-recaptcha {
+  margin-bottom: 8px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 7777;
+  width: 100%;
+  height: 100%;
+  background: rgba(190, 63, 70, 0.9);
+  display: none;
+}
+
+.popupCallBack {
+  display: none;
+  z-index: 8888;
+  position: fixed;
+  top: 100px;
+  width: 400px;
+  left: 50%;
+  margin-left: -200px;
+}
+
+.formZ__area {
+  background: #e8e8e8;
+  width: 100%;
+  padding: 20px 20px;
+  position: relative;
+  border-radius: 3px;
+}
+
+.formZ_title {
+  font-size: 0.875rem;
+  text-align: center;
+  padding: 10px 15px;
+  font-weight: 400;
+}
+
+.formZ1 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.formZ1 input {
+  width: 100%;
+  height: 32px;
+  background-color: #fff;
+  border: 1px solid #fff;
+  padding: 0 10px;
+  font-size: 0.875rem;
+  line-height: 1.2;
+  font-weight: 400;
+  box-sizing: border-box;
+  display: inline-block;
+  outline: none;
+  margin-bottom: 5px;
+  border-radius: 2px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.formZ1 input.error {
+  border: 1px solid #f00;
+}
+
+input.work_emailZ1 {
+  display: none;
+}
+
+.submitZ1 {
+  width: 100%;
+  height: 32px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.2;
+  padding: 10px 15px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.formClose {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.formClose i {
+  font-size: 2rem;
+  color: #be3f46;
+}
