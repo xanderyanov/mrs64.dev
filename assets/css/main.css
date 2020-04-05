@@ -20,15 +20,7 @@ body {
   position: relative;
 }
 
-.w1 {
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 10px;
-}
-
 .header__area {
-  width: 100%;
   background: rgba(0, 60, 75, 1);
 }
 
@@ -232,4 +224,137 @@ body {
   color: white;
   font-size: 1.25rem;
   font-weight: 300;
+}
+
+.mainAbout {
+  display: flex;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.mainAbout__content {
+  width: 66%;
+  padding-right: 20px;
+}
+
+.mainAbout__img {
+  width: 33%;
+}
+
+.mainAbout__imgContainer {
+  width: 100%;
+}
+
+.mainAbout__imgContainer img {
+  width: 100%;
+  display: block;
+}
+
+.mainAbout__videoContainer {
+  width: 100%;
+}
+
+.mainAbout__videoBox {
+  position: relative;
+}
+
+.mainAbout__videoBox a:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 60, 75, 0.5);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(../img/play.png);
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.mainAbout__videoBox a:hover:after {
+  opacity: 1;
+}
+
+.mainAbout__videoBox a {
+  display: block;
+}
+
+.mainAbout__videoBox a img {
+  display: block;
+  width: 100%;
+}
+
+.deals__area {
+  background-color: #00829b;
+}
+
+.deals__outer {
+  position: relative;
+}
+
+.titleWithMoreLink {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.deals {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+}
+
+.deals__item {
+  width: 33.333%;
+  padding: 10px;
+}
+
+.deals__item a {
+  display: flex;
+  position: relative;
+  border: 2px solid white;
+}
+
+.deals__item a:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 60, 75, 0.7);
+  transition: all 0.5s;
+}
+
+.deals__item a:hover:before {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.deals__item a img {
+  width: 100%;
+  display: block;
+}
+
+.deals__item a span {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  color: #fff;
+  transition: all 0.5s;
+  font-size: 1.5rem;
+}
+.deals__item a:hover span {
+  height: 100%;
+  color: #003c4b;
 }
