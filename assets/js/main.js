@@ -1,235 +1,42 @@
-$(function() {
-  $(".menuButton").click(function() {
-    $(this).toggleClass("open");
-    $(".adaptiveMenu__area").slideToggle();
-  });
-
-  $(".adaptiveMenuBtnClose").click(function() {
-    $(".menuButton").toggleClass("open");
-    $(".adaptiveMenu__area").slideToggle();
-  });
-
-  $(".vMenu li:has(ul) > a")
-    .addClass("hasInner")
-    .append('<div class="goInner"><i class="icon-next"></i></div>');
-
-  $(".vMenu__toggleBtn").click(function() {
-    $(this).toggleClass("open");
-    $(".adaptivevMenu__area").slideToggle();
-  });
-
-  $(".adaptivevMenuBtnClose").click(function() {
-    $(".vMenu__toggleBtn").toggleClass("open");
-    $(".adaptivevMenu__area").slideToggle();
-  });
-
-  $("table").wrap('<div class="table_outer"></div>');
-
-  $(".toTop").hide();
-  $(window).scroll(function() {
-    if ($(this).scrollTop() > 0) {
-      $(".toTop").fadeIn();
-    } else {
-      $(".toTop").fadeOut();
-    }
-  });
-  $(".toTop").click(function() {
-    $("body,html").animate({ scrollTop: 0 }, 400);
-    return false;
-  });
-
-  $(".phoneZ1").mask("+7 (999) 999-9999");
-  $(".phone1").mask("+7 (999) 999-9999");
-
-  $(".minus").click(function() {
-    var $input = $(this)
-      .parent()
-      .find("input");
-    var count = parseInt($input.val()) - 1;
-    count = count < 1 ? 1 : count;
-    $input.val(count);
-    $input.change();
-    return false;
-  });
-  $(".plus").click(function() {
-    var $input = $(this)
-      .parent()
-      .find("input");
-    $input.val(parseInt($input.val()) + 1);
-    $input.change();
-    return false;
-  });
-
-  if ($(".swiper-container1").length) {
-    var mySwiper1 = new Swiper(".swiper-container1", {
-      slidesPerView: 1,
+$(function () {
+  if ($(".swiper-container3").length) {
+    var swiper3 = new Swiper(".swiper-container3", {
+      // pagination: '.swiper-pagination2',
+      nextButton: ".swiper-button-next3",
+      prevButton: ".swiper-button-prev3",
+      paginationClickable: true,
+      spaceBetween: 10,
       loop: true,
-      autoplay: {
-        delay: 5500,
-        disableOnInteraction: false
-      },
-      pagination: {
-        el: ".swiper-pagination1",
-        type: "bullets",
-        dynamicBullets: true,
-        clickable: true
-      },
-      navigation: {
-        nextEl: ".swiper-button-next1",
-        prevEl: ".swiper-button-prev1"
-      },
-      on: {
-        init: function() {
-          console.log("swiper initialized");
-          $(".swiper-slide")
-            .children(".swiper__cadr")
-            .removeClass("animationBaretsky1")
-            .fadeOut(500);
-
-          setTimeout(function() {
-            $(".swiper-slide-active")
-              .children(".swiper__cadr")
-              .fadeIn(500)
-              .addClass("animated")
-              .addClass("animationBaretsky1");
-          }, 500);
-        },
-        slideChange: function() {
-          $(".swiper-slide")
-            .children(".swiper__cadr")
-            .removeClass("animationBaretsky1")
-            .fadeOut(500);
-
-          setTimeout(function() {
-            $(".swiper-slide-active")
-              .children(".swiper__cadr")
-              .fadeIn(500)
-              .addClass("animated")
-              .addClass("animationBaretsky1");
-          }, 500);
-        }
-      }
-    });
-  }
-
-  if ($(".tovar__slider").length) {
-    var galleryThumbs = new Swiper(".gallery-thumbs", {
-      spaceBetween: 5,
-      loop: false,
-      //   effect: 'slide',
-      slidesPerView: 4,
       freeMode: true,
-      watchSlidesVisibility: true,
-      watchSlidesProgress: true
-    });
-    var galleryTop = new Swiper(".gallery-top", {
-      //   nextButton: '.swiper-button-next2',
-      //   prevButton: '.swiper-button-prev2',
-      spaceBetween: 5,
-      loop: false,
-      effect: "slide",
-      navigation: {
-        nextEl: ".swiper-button-next2",
-        prevEl: ".swiper-button-prev2"
+      // centeredSlides: true,
+      autoplay: 6500,
+      // effect: 'coverflow',
+      autoplayDisableOnInteraction: false,
+      slidesPerView: 6,
+      breakpoints: {
+        920: {
+          slidesPerView: 5,
+          spaceBetween: 10,
+        },
+        800: {
+          slidesPerView: 4,
+          spaceBetween: 10,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 10,
+        },
+        600: {
+          slidesPerView: 2,
+          spaceBetween: 5,
+        },
+        480: {
+          slidesPerView: 1,
+          spaceBetween: 5,
+        },
       },
-      thumbs: {
-        swiper: galleryThumbs
-      }
     });
-    // if($(".gallery-top .swiper-slide2").length == 1) {
-    //   $('.swiper-pagination').addClass( "disabled" );
-    // }
   }
-
-  $(".tovarItem__addCart").on("click", function(e) {
-    e.preventDefault(); //при верстке ставить - в modx убирать, а то корзина не суммируется
-    var cart = $(".myMiniCart__area ");
-    var imgtodrag = $(this)
-      .closest(".tovarItem")
-      .children(".tovarItem__header")
-      .children(".tovarItem__img")
-      .find("img");
-
-    if (imgtodrag) {
-      var imgclone = imgtodrag
-        .clone()
-        .offset({
-          top: imgtodrag.offset().top,
-          left: imgtodrag.offset().left
-        })
-        .css({
-          opacity: "0.5",
-          position: "absolute",
-          height: "150px",
-          width: "150px",
-          "z-index": "9999"
-        })
-        .appendTo($("body"))
-        .animate(
-          {
-            top: cart.offset().top + 10,
-            left: cart.offset().left + 10,
-            width: 75,
-            height: 75
-          },
-          1000
-        );
-
-      imgclone.animate(
-        {
-          width: 0,
-          height: 0
-        },
-        function() {
-          $(this).detach();
-        }
-      );
-    }
-  });
-
-  $(".tovar__addToCart").on("click", function(e) {
-    e.preventDefault(); //при верстке ставить - в modx убирать, а то корзина не суммируется
-    var cart = $(".myMiniCart__area ");
-    var imgtodrag = $(this)
-      .closest(".tovar__areaTop")
-      .find(".swiper-slide-active img");
-
-    if (imgtodrag) {
-      var imgclone = imgtodrag
-        .clone()
-        .offset({
-          top: imgtodrag.offset().top,
-          left: imgtodrag.offset().left
-        })
-        .css({
-          opacity: "0.5",
-          position: "absolute",
-          height: "150px",
-          width: "150px",
-          "z-index": "9999"
-        })
-        .appendTo($("body"))
-        .animate(
-          {
-            top: cart.offset().top + 10,
-            left: cart.offset().left + 10,
-            width: 75,
-            height: 75
-          },
-          1000
-        );
-
-      imgclone.animate(
-        {
-          width: 0,
-          height: 0
-        },
-        function() {
-          $(this).detach();
-        }
-      );
-    }
-  });
 
   $("a[data-fancybox]").fancybox({
     closeBtn: false,
@@ -246,11 +53,11 @@ $(function() {
     transitionEffect: "slide",
     touch: {
       vertical: true, // Allow to drag content vertically
-      momentum: true // Continue movement after releasing mouse/touch when panning
-    }
+      momentum: true, // Continue movement after releasing mouse/touch when panning
+    },
   });
 
-  $(".form1").on("click", ".submit1", function(e) {
+  $(".form1").on("click", ".submit1", function (e) {
     e.preventDefault();
     var name = $(".name1").val();
     var phone = $(".phone1").val();
@@ -264,10 +71,10 @@ $(function() {
         title: "Поле Имя пустое",
         text: "Заполните поле имя",
         type: "error",
-        confirmButtonText: "ок"
+        confirmButtonText: "ок",
       });
       $(".name1").addClass("error");
-      setTimeout(function() {
+      setTimeout(function () {
         $(".name1").removeClass("error");
       }, 3000);
     } else if (phone == "") {
@@ -275,10 +82,10 @@ $(function() {
         title: "Поле Телефон пустое",
         text: "Заполните поле телефон",
         type: "error",
-        confirmButtonText: "ок"
+        confirmButtonText: "ок",
       });
       $(".phone1").addClass("error");
-      setTimeout(function() {
+      setTimeout(function () {
         $(".phone1").removeClass("error");
       }, 3000);
     } else if (email == "") {
@@ -286,10 +93,10 @@ $(function() {
         title: "Ошибка Email",
         text: "Заполните поле Email",
         type: "error",
-        confirmButtonText: "ок"
+        confirmButtonText: "ок",
       });
       $(".email1").addClass("error");
-      setTimeout(function() {
+      setTimeout(function () {
         $(".email1").removeClass("error");
       }, 3000);
     } else if (!r.test(email)) {
@@ -297,10 +104,10 @@ $(function() {
         title: "Ошибка",
         text: "Корректно заполните поле e-mail",
         type: "error",
-        confirmButtonText: "ок"
+        confirmButtonText: "ок",
       });
       $(".email1").addClass("error");
-      setTimeout(function() {
+      setTimeout(function () {
         $(".email1").removeClass("error");
       }, 3000);
     } else if (message == "") {
@@ -308,10 +115,10 @@ $(function() {
         title: "Пустое сообщение",
         text: "Заполните текст сообщения",
         type: "error",
-        confirmButtonText: "ок"
+        confirmButtonText: "ок",
       });
       $(".message1").addClass("error");
-      setTimeout(function() {
+      setTimeout(function () {
         $(".message1").removeClass("error");
       }, 3000);
     } else if (workemail != "") {
@@ -319,14 +126,14 @@ $(function() {
         title: "Ах ты жулик",
         text: "Уберите робота от компьютера",
         type: "error",
-        confirmButtonText: "ок"
+        confirmButtonText: "ок",
       });
     } else if (!recaptcha) {
       swal({
         title: "поставьте галочку",
         text: "при проверке на спам",
         type: "error",
-        confirmButtonText: "ок"
+        confirmButtonText: "ок",
       });
     } else {
       $.post(
@@ -336,72 +143,52 @@ $(function() {
           phone: phone,
           email: email,
           message: message,
-          recaptcha: recaptcha
+          recaptcha: recaptcha,
         },
-        function() {
+        function () {
           swal({
             title: "Спасибо",
             text: "Ваше сообщение отправлено",
             type: "success",
-            confirmButtonText: "ок"
+            confirmButtonText: "ок",
           });
-          $(".name1")
-            .val("")
-            .removeClass("error");
-          $(".phone1")
-            .val("")
-            .removeClass("error");
-          $(".email1")
-            .val("")
-            .removeClass("error");
-          $(".message1")
-            .val("")
-            .removeClass("error");
+          $(".name1").val("").removeClass("error");
+          $(".phone1").val("").removeClass("error");
+          $(".email1").val("").removeClass("error");
+          $(".message1").val("").removeClass("error");
         }
       );
     }
   });
 
-  $(".ringBtn_js").click(function(e) {
+  $(".ringBtn_js").click(function (e) {
     e.preventDefault();
     e.stopPropagation();
     var self = $(this);
     if (self.hasClass("js_active")) {
       self.removeClass("js_active");
-      $(".js_containerZ1")
-        .addClass("bounceOutUp")
-        .removeClass("bounceInDown")
-        .fadeOut(600);
+      $(".js_containerZ1").addClass("bounceOutUp").removeClass("bounceInDown").fadeOut(600);
       $(".overlay").fadeOut(200);
     } else {
       self.addClass("js_active");
-      $(".js_containerZ1")
-        .removeClass("bounceOutUp")
-        .addClass("bounceInDown")
-        .fadeIn(200);
+      $(".js_containerZ1").removeClass("bounceOutUp").addClass("bounceInDown").fadeIn(200);
       $(".overlay").fadeIn(200);
     }
   });
-  $(".overlay").click(function(e) {
+  $(".overlay").click(function (e) {
     e.preventDefault();
-    $(".js_containerZ1")
-      .addClass("bounceOutUp")
-      .removeClass("bounceInDown")
-      .fadeOut(600);
+    $(".js_containerZ1").addClass("bounceOutUp").removeClass("bounceInDown").fadeOut(600);
     $(".ringBtn_js").removeClass("js_active");
 
     $(".overlay").fadeOut(600);
   });
-  $(".formClose").click(function(e) {
+  $(".formClose").click(function (e) {
     e.preventDefault();
-    $(".js_containerZ1")
-      .addClass("bounceOutUp")
-      .removeClass("bounceInDown")
-      .fadeOut(600);
+    $(".js_containerZ1").addClass("bounceOutUp").removeClass("bounceInDown").fadeOut(600);
     $(".ringBtn_js").removeClass("js_active");
     $(".overlay").fadeOut(600);
   });
-  $(".formZ1").on("click", ".submitZ1", function(e) {
+  $(".formZ1").on("click", ".submitZ1", function (e) {
     e.preventDefault();
     var name = $(".nameZ1").val();
     var phone = $(".phoneZ1").val();
@@ -410,7 +197,7 @@ $(function() {
     if (name == "") {
       swal({ title: "Поле Имя пустое", text: "Заполните поле имя", type: "error", confirmButtonText: "ок" });
       $(".nameZ1").addClass("error");
-      setTimeout(function() {
+      setTimeout(function () {
         $(".nameZ1").removeClass("error");
       }, 3000);
     } else if (phone == "") {
@@ -418,10 +205,10 @@ $(function() {
         title: "Поле Телефон пустое",
         text: "Заполните поле телефон",
         type: "error",
-        confirmButtonText: "ок"
+        confirmButtonText: "ок",
       });
       $(".phoneZ1").addClass("error");
-      setTimeout(function() {
+      setTimeout(function () {
         $(".phoneZ1").removeClass("error");
       }, 3000);
     } else if (workemail != "") {
@@ -432,21 +219,14 @@ $(function() {
         {
           subj: "Заказ с главной страницы",
           name: name,
-          phone: phone
+          phone: phone,
         },
-        function() {
+        function () {
           swal({ title: "Спасибо", text: "Ваше сообщение отправлено", type: "success", confirmButtonText: "ок" });
-          $(".nameZ1")
-            .val("")
-            .removeClass("error");
-          $(".phoneZ1")
-            .val("")
-            .removeClass("error");
+          $(".nameZ1").val("").removeClass("error");
+          $(".phoneZ1").val("").removeClass("error");
           $(".jsbtn__Z1").removeClass("js_active");
-          $(".js_containerZ1")
-            .addClass("bounceOutUp")
-            .removeClass("bounceInDown")
-            .fadeOut(600);
+          $(".js_containerZ1").addClass("bounceOutUp").removeClass("bounceInDown").fadeOut(600);
           $(".overlay").fadeOut(200);
         }
       );
@@ -455,24 +235,24 @@ $(function() {
 });
 
 var isMobile = {
-  Android: function() {
+  Android: function () {
     return navigator.userAgent.match(/Android/i);
   },
-  BlackBerry: function() {
+  BlackBerry: function () {
     return navigator.userAgent.match(/BlackBerry/i);
   },
-  iOS: function() {
+  iOS: function () {
     return navigator.userAgent.match(/iPhone|iPad|iPod/i);
   },
-  Opera: function() {
+  Opera: function () {
     return navigator.userAgent.match(/Opera Mini/i);
   },
-  Windows: function() {
+  Windows: function () {
     return navigator.userAgent.match(/IEMobile/i);
   },
-  any: function() {
+  any: function () {
     return isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows();
-  }
+  },
 };
 
 if ($(".map__area").length) {
@@ -482,7 +262,7 @@ if ($(".map__area").length) {
     var myMap = new ymaps.Map("map", {
       center: [51.47580915016555, 46.15893440825965],
       zoom: 16,
-      controls: ["zoomControl"]
+      controls: ["zoomControl"],
     });
 
     myMap.behaviors.disable("scrollZoom");
@@ -507,7 +287,7 @@ if ($(".map__area").length) {
         balloonContentFooter: '<div class="baloon__footer">город Энгельс, ул. М.Расковой, д.6В</div>',
         clusterCaption: "Доставка стройматериалов",
         // Зададим содержимое всплывающей подсказки.
-        hintContent: '<div class="baloon__top">Магазин стройматериалов в Энгельсе</div>'
+        hintContent: '<div class="baloon__top">Магазин стройматериалов в Энгельсе</div>',
       },
       {
         // Необходимо указать данный тип макета.
@@ -517,7 +297,7 @@ if ($(".map__area").length) {
         iconImageSize: [31, 50],
         // Смещение левого верхнего угла иконки относительно
         // её «ножки» (точки привязки).
-        iconImageOffset: [-15, -50]
+        iconImageOffset: [-15, -50],
       }
     );
     // myGeoObjects[1] = new ymaps.Placemark([51.551021850477284,46.01745698280331],{
@@ -535,8 +315,8 @@ if ($(".map__area").length) {
       {
         href: "/images/pointer.png",
         size: [31, 40],
-        offset: [0, 0]
-      }
+        offset: [0, 0],
+      },
     ];
 
     var clusterer = new ymaps.Clusterer({
@@ -556,7 +336,7 @@ if ($(".map__area").length) {
       clusterBalloonPagerSize: 5,
       // Настройка внешего вида нижней панели.
       // Режим marker рекомендуется использовать с небольшим количеством элементов.
-      clusterBalloonPagerType: "marker"
+      clusterBalloonPagerType: "marker",
       // Можно отключить зацикливание списка при навигации при помощи боковых стрелок.
       // clusterBalloonCycling: false,
       // Можно отключить отображение меню навигации.
@@ -589,7 +369,7 @@ if (share_links_container != "NULL") {
   }
 
   share = {
-    twitter: function(purl, ptitle) {
+    twitter: function (purl, ptitle) {
       url = "http://twitter.com/share?";
       url += "text=" + encodeURIComponent(ptitle);
       url += "&url=" + encodeURIComponent(purl);
@@ -597,13 +377,13 @@ if (share_links_container != "NULL") {
       share.popup(url);
       return false;
     },
-    gp: function(purl, ptitle, pimg, text) {
+    gp: function (purl, ptitle, pimg, text) {
       url = "https://plus.google.com/share?";
       url += "url=" + encodeURIComponent(purl);
       share.popup(url);
       return false;
     },
-    mail: function(purl, ptitle, pimg, text) {
+    mail: function (purl, ptitle, pimg, text) {
       url = "http://connect.mail.ru/share?";
       url += "url=" + encodeURIComponent(purl);
       url += "&title=" + encodeURIComponent(ptitle);
@@ -612,7 +392,7 @@ if (share_links_container != "NULL") {
       share.popup(url);
       return false;
     },
-    vk: function(purl, ptitle, pimg, text) {
+    vk: function (purl, ptitle, pimg, text) {
       url = "http://vkontakte.ru/share.php?";
       url += "url=" + encodeURIComponent(purl);
       url += "&title=" + encodeURIComponent(ptitle);
@@ -622,14 +402,14 @@ if (share_links_container != "NULL") {
       share.popup(url);
       return false;
     },
-    ok: function(purl, text) {
+    ok: function (purl, text) {
       url = "http://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1";
       url += "&st.comments=" + encodeURIComponent(text);
       url += "&st._surl=" + encodeURIComponent(purl);
       share.popup(url);
       return false;
     },
-    fb: function(purl, ptitle, pimg, text) {
+    fb: function (purl, ptitle, pimg, text) {
       url = "http://www.facebook.com/sharer.php?s=100";
       url += "&p[title]=" + encodeURIComponent(ptitle);
       url += "&p[summary]=" + encodeURIComponent(text);
@@ -639,9 +419,9 @@ if (share_links_container != "NULL") {
       return false;
     },
 
-    popup: function(url, width, height) {
+    popup: function (url, width, height) {
       window.open(url, "", "toolbar=0,status=0,width=" + share_popup_width + ",height=" + share_popup_height);
       return false;
-    }
+    },
   };
 }

@@ -295,6 +295,8 @@ body {
 
 .deals__outer {
   position: relative;
+  padding-bottom: 30px;
+  padding-top: 20px;
 }
 
 .titleWithMoreLink {
