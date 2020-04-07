@@ -18,6 +18,7 @@ body {
 }
 .site__footer {
   position: relative;
+  height: 200px;
 }
 
 .header__area {
@@ -299,11 +300,24 @@ body {
   padding-top: 20px;
 }
 
-.titleWithMoreLink {
+.titleBox {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
+}
+
+.titleBox_withMoreLink {
+  justify-content: space-between;
+}
+
+.redmore1 {
+  color: #fefefe;
+  font-size: 1.125rem;
+  font-weight: 400;
+  text-decoration: underline;
+}
+.redmore1:hover {
+  text-decoration: none;
 }
 
 .deals {
@@ -359,4 +373,52 @@ body {
 .deals__item a:hover span {
   height: 100%;
   color: #003c4b;
+}
+
+.siteBlock__outer {
+  padding: 20px 5px 40px 5px;
+}
+
+.animCount__area {
+  position: relative;
+  background-image: url(../img/bg2.jpg);
+  background-attachment: fixed;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+.animCount__outer {
+  padding: 50px 10px 50px 10px;
+}
+
+.animCount__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.animCount {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+  justify-content: center;
+}
+
+.animCount__number {
+  display: flex;
+  align-items: center;
+}
+
+.animCount__number span {
+  font-size: 3.125rem;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.animCount__numberInfo {
+  font-size: 1.125rem;
+  color: #fff;
+  line-height: 1.4;
+  text-align: center;
 }

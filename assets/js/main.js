@@ -1,40 +1,73 @@
 $(function () {
-  if ($(".swiper-container3").length) {
-    var swiper3 = new Swiper(".swiper-container3", {
-      // pagination: '.swiper-pagination2',
-      nextButton: ".swiper-button-next3",
-      prevButton: ".swiper-button-prev3",
-      paginationClickable: true,
-      spaceBetween: 10,
+  if ($(".carousel__container").length) {
+    var carousel = new Swiper(".carousel__container", {
+      slidesPerView: 1,
+      spaceBetween: 15,
+      slidesPerGroup: 1,
       loop: true,
-      freeMode: true,
-      // centeredSlides: true,
-      autoplay: 6500,
-      // effect: 'coverflow',
-      autoplayDisableOnInteraction: false,
-      slidesPerView: 6,
+      loopFillGroupWithBlank: true,
+      navigation: {
+        nextEl: ".carousel__btnNext",
+        prevEl: ".carousel__btnPrev",
+      },
       breakpoints: {
+        1024: {
+          slidesPerView: 6,
+          spaceBetween: 15,
+        },
         920: {
           slidesPerView: 5,
           spaceBetween: 10,
         },
-        800: {
+        768: {
           slidesPerView: 4,
           spaceBetween: 10,
         },
-        768: {
-          slidesPerView: 3,
-          spaceBetween: 10,
-        },
         600: {
-          slidesPerView: 2,
+          slidesPerView: 3,
           spaceBetween: 5,
         },
         480: {
-          slidesPerView: 1,
+          slidesPerView: 2,
           spaceBetween: 5,
         },
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 1,
+        },
       },
+    });
+  }
+
+  if ($(".animCount__outer").length) {
+    // Однократная анимация цифр при прокрутке страницы
+    var showAnimateCounter = true;
+    function numAnimate() {
+      $(".animCount__numberOn").each(function () {
+        $(this)
+          .prop("Counter", 0)
+          .animate(
+            {
+              Counter: $(this).text(),
+            },
+            {
+              duration: 2000,
+              easing: "swing",
+              step: function (now) {
+                $(this).text(Math.ceil(now));
+              },
+            }
+          );
+      });
+      showAnimateCounter = false;
+    }
+
+    $(window).scroll(function () {
+      if (!showAnimateCounter) return false;
+      var scrTop = $(window).scrollTop();
+      if (scrTop > $(".animCount").offset().top - $(window).height()) {
+        numAnimate();
+      }
     });
   }
 
