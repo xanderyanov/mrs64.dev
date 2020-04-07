@@ -422,3 +422,31 @@ body {
   line-height: 1.4;
   text-align: center;
 }
+
+.contBox__area {
+  position: relative;
+  background-image: url(../img/bg3.jpg);
+  background-attachment: fixed;
+  background-position: top center;
+  background-repeat: no-repeat;
+  padding: 40px 0;
+}
+
+.contBox {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.contBox__map {
+  width: 60%;
+}
+
+.contBox__form {
+  width: 40%;
+  padding: 0 0 0 20px;
+}
+
+#map {
+  height: 460px;
+  border: 2px solid #003c4b;
+}

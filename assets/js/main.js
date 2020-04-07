@@ -293,7 +293,7 @@ if ($(".map__area").length) {
 
   function init() {
     var myMap = new ymaps.Map("map", {
-      center: [51.47580915016555, 46.15893440825965],
+      center: [51.48780121158999, 46.15275207672108],
       zoom: 16,
       controls: ["zoomControl"],
     });
@@ -306,7 +306,7 @@ if ($(".map__area").length) {
     var myGeoObjects = [];
 
     myGeoObjects[0] = new ymaps.Placemark(
-      [51.47580915016555, 46.15893440825965],
+      [51.48780121158999, 46.15275207672108],
       {
         // Зададим содержимое заголовка балуна.
         balloonContentHeader:
