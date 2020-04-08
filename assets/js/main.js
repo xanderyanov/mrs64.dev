@@ -1,4 +1,14 @@
 $(function () {
+  $(".menuButton").click(function () {
+    $(this).toggleClass("open");
+    $(".adaptiveMenu__boxOuter").slideToggle(400);
+  });
+
+  $(".adaptiveMenuBtnClose").click(function () {
+    $(".menuButton").toggleClass("open");
+    $(".adaptiveMenu__boxOuter").slideToggle(400);
+  });
+
   if ($(".carousel__container").length) {
     var carousel = new Swiper(".carousel__container", {
       slidesPerView: 1,
