@@ -71,6 +71,23 @@ $(function () {
     });
   }
 
+  $("table").wrap('<div class="table_outer"></div>');
+
+  $(".toTop").hide();
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 0) {
+      $(".toTop").fadeIn();
+    } else {
+      $(".toTop").fadeOut();
+    }
+  });
+  $(".toTop").click(function () {
+    $("body,html").animate({ scrollTop: 0 }, 400);
+    return false;
+  });
+
+  $(".phone1").mask("+7 (999) 999-9999");
+
   $("a[data-fancybox]").fancybox({
     closeBtn: false,
     arrows: true,
@@ -310,17 +327,19 @@ if ($(".map__area").length) {
       {
         // Зададим содержимое заголовка балуна.
         balloonContentHeader:
-          '<div class="baloon__top">Магазин стройматериалов<br>в Энгельсе</div>' +
-          '<div class="baloon__description">Доставка по звонку!</div>',
+          '<div class="baloon__top">Межрегионстрой</div>' +
+          '<div class="baloon__description">Строительная компания</div>',
         // Зададим содержимое основной части балуна.
         balloonContentBody:
-          '<div class="baloon__content"><img src="assets/img/logo-map.png" height="52" width="150">' +
+          '<div class="baloon__content"><img src="assets/img/logo-map1.jpg">' +
           '<a href="tel:+79053879990">8(905)387-99-90</a> <a href="tel:+79376397000">8(937)639-70-00</a>',
         // Зададим содержимое нижней части балуна.
-        balloonContentFooter: '<div class="baloon__footer">город Энгельс, ул. М.Расковой, д.6В</div>',
+        balloonContentFooter:
+          '<div class="baloon__footer">413115, Саратовская обл., г. Энгельс, ул. Нестерова, д.136</div>',
+
         clusterCaption: "Доставка стройматериалов",
         // Зададим содержимое всплывающей подсказки.
-        hintContent: '<div class="baloon__top">Магазин стройматериалов в Энгельсе</div>',
+        hintContent: '<div class="baloon__hit">Межрегионстрой</div>',
       },
       {
         // Необходимо указать данный тип макета.

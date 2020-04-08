@@ -14,6 +14,10 @@
 }
 
 .carousel__slide {
+  padding: 2px;
+}
+
+.carousel__slideInner {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,7 +25,7 @@
   border: 1px solid #00829b;
 }
 
-.carousel__slide img {
+.carousel__slideInner img {
   display: block;
   max-width: 100%;
   height: auto;
