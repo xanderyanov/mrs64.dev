@@ -52,7 +52,7 @@ h6 {
   font-weight: 400;
   line-height: 1.2;
   margin: 0 0 10px 0;
-  color: #212121;
+  color: #000;
 }
 
 .content p:last-child,
@@ -81,11 +81,11 @@ h6 {
 .content blockquote {
   color: #fff;
   padding: 10px 20px;
-  background: #be3f46;
+  background: #00829b;
 }
 
 .content a {
-  color: #be3f46;
+  color: #00829b;
   text-decoration: underline;
 }
 
@@ -100,7 +100,7 @@ h6 {
   position: relative;
   margin: 0;
   padding-left: 30px;
-  color: #363636;
+  color: #000;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -114,7 +114,7 @@ h6 {
   width: 25px;
   text-align: right;
   display: inline-block;
-  color: #be3f46;
+  color: #00829b;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -145,7 +145,7 @@ h6 {
 .content table th,
 .content table td {
   padding: 10px;
-  border: 1px solid #be3f46;
+  border: 1px solid #00829b;
 }
 
 table.clear {

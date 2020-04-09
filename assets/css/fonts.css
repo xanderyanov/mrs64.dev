@@ -1,9 +1,9 @@
 @font-face {
   font-family: "icomoon";
-  src: url("../fonts/icomoon.eot?oyw5s1");
-  src: url("../fonts/icomoon.eot?oyw5s1#iefix") format("embedded-opentype"),
-    url("../fonts/icomoon.ttf?oyw5s1") format("truetype"), url("../fonts/icomoon.woff?oyw5s1") format("woff"),
-    url("../fonts/icomoon.svg?oyw5s1#icomoon") format("svg");
+  src: url("../fonts/icomoon.eot?sq0hg6");
+  src: url("../fonts/icomoon.eot?sq0hg6#iefix") format("embedded-opentype"),
+    url("../fonts/icomoon.ttf?sq0hg6") format("truetype"), url("../fonts/icomoon.woff?sq0hg6") format("woff"),
+    url("../fonts/icomoon.svg?sq0hg6#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,60 +25,60 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-scheme:before {
-  content: "\e912";
-}
-.icon-back2:before {
-  content: "\e900";
-}
-.icon-circular-wall-clock:before {
-  content: "\e901";
-}
-.icon-cross2:before {
+.icon-add-outline:before {
   content: "\e902";
 }
-.icon-down-arrow:before {
+.icon-cheveron-down:before {
   content: "\e903";
 }
-.icon-facebook:before {
+.icon-cheveron-left:before {
   content: "\e904";
 }
-.icon-icon:before {
+.icon-cheveron-right:before {
   content: "\e905";
 }
-.icon-instagram2:before {
-  content: "\e906";
-}
-.icon-location:before {
-  content: "\e907";
-}
-.icon-next2:before {
-  content: "\e908";
-}
-.icon-odnoklassniki-logo:before {
-  content: "\e909";
-}
-.icon-phone-call:before {
+.icon-cheveron-up:before {
   content: "\e90a";
 }
-.icon-placeholder:before {
+.icon-close1:before {
   content: "\e90b";
 }
-.icon-shopping-cart:before {
+.icon-facebook:before {
   content: "\e90c";
 }
-.icon-shopping-cart2:before {
+.icon-odnoklassniki:before {
   content: "\e90d";
 }
-.icon-twitter-bird-logo:before {
+.icon-search1:before {
   content: "\e90e";
 }
-.icon-vk2:before {
+.icon-twitter:before {
   content: "\e90f";
 }
-.icon-vk-logo:before {
+.icon-vk:before {
   content: "\e910";
 }
-.icon-watsapp:before {
-  content: "\e911";
+.icon-next1:before {
+  content: "\e900";
+}
+.icon-back1:before {
+  content: "\e901";
+}
+.icon-search:before {
+  content: "\e906";
+}
+.icon-cart1:before {
+  content: "\e907";
+}
+.icon-favorit:before {
+  content: "\e908";
+}
+.icon-user:before {
+  content: "\e909";
+}
+.icon-close:before {
+  content: "\ea0f";
+}
+.icon-whatsapp:before {
+  content: "\ea93";
 }

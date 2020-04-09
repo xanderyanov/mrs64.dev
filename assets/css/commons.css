@@ -337,11 +337,11 @@
   position: relative;
 }
 .breadcrumbs div a:hover {
-  color: #be3f46;
+  color: #003c4b;
 }
 
 .breadcrumbs div span {
-  color: #be3f46;
+  color: #003c4b;
   font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.2;

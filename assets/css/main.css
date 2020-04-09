@@ -136,8 +136,8 @@ body {
 .menuButton {
   background: #fff;
   border-radius: 2px;
-  width: 32px;
-  height: 32px;
+  width: 2rem;
+  height: 2rem;
   position: relative;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
@@ -155,11 +155,11 @@ body {
 .menuButton span {
   display: block;
   position: absolute;
-  height: 2px;
-  width: 20px;
+  height: 0.125rem;
+  width: 1.25rem;
   background: #003c4b;
   opacity: 1;
-  left: 6px;
+  left: 0.375rem;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
@@ -171,19 +171,19 @@ body {
 }
 
 .menuButton span:nth-child(1) {
-  top: 6px;
+  top: 0.375rem;
 }
 
 .menuButton span:nth-child(2) {
-  top: 15px;
+  top: 0.9375rem;
 }
 
 .menuButton span:nth-child(3) {
-  top: 24px;
+  top: 1.5rem;
 }
 
 .menuButton.open span:nth-child(1) {
-  top: 15px;
+  top: 0.9375rem;
   -webkit-transform: rotate(135deg);
   -moz-transform: rotate(135deg);
   -o-transform: rotate(135deg);
@@ -192,11 +192,11 @@ body {
 
 .menuButton.open span:nth-child(2) {
   opacity: 0;
-  left: -60px;
+  left: -3.75rem;
 }
 
 .menuButton.open span:nth-child(3) {
-  top: 15px;
+  top: 0.9375rem;
   -webkit-transform: rotate(-135deg);
   -moz-transform: rotate(-135deg);
   -o-transform: rotate(-135deg);
@@ -392,6 +392,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   margin: 0 -10px;
+  justify-content: center;
 }
 
 .deals__item {
@@ -503,6 +504,7 @@ body {
 .contBox {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .contBox__map {
@@ -583,6 +585,7 @@ body {
   display: flex;
   justify-content: space-between;
   position: relative;
+  flex-wrap: wrap;
 }
 
 .f1 {
@@ -817,4 +820,13 @@ body {
   color: #fff;
   font-size: 1.125rem;
   font-weight: 300;
+}
+
+.page__area {
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.page {
 }
