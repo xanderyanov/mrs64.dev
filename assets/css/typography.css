@@ -39,7 +39,7 @@ h6 {
 }
 
 .content {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .content p,
@@ -162,6 +162,7 @@ table.clear td {
 .table_outer {
   max-width: 100%;
   overflow: auto;
+  margin-bottom: 1.25rem;
 }
 .table_outer table {
   min-width: 500px;

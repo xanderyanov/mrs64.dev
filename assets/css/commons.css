@@ -481,16 +481,16 @@ form.form-search .inputs-group .search-submit:hover {
   line-height: 1;
   width: 32px;
   height: 32px;
-  color: #be3f46;
+  color: #00829b;
   display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  border: 2px solid #be3f46;
+  border: 2px solid #00829b;
 }
 
 .pagin ul.pagination li.control a {
-  border: 2px solid #be3f46;
+  border: 2px solid #00829b;
   background: none;
 }
 
@@ -505,14 +505,14 @@ form.form-search .inputs-group .search-submit:hover {
 .pagin ul.pagination li.active a,
 .pagin ul.pagination li a:hover {
   color: #fff;
-  border: 2px solid #be3f46;
-  background: #be3f46;
+  border: 2px solid #00829b;
+  background: #00829b;
 }
 
 .pagin ul.pagination li.control.active a,
 .pagin ul.pagination li.control a:hover {
   color: #fff;
-  border: 2px solid #be3f46;
+  border: 2px solid #00829b;
 }
 
 .rows {
